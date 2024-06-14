@@ -16,8 +16,8 @@ class TradingStrategy(Strategy):
         # Initialize SPY stake to 0
         spy_stake = 0
         # Access the last 20 minutes data for SPY
-        if len(data["ohlcv"]) >= 20:
-            last_20_prices = [d["SPY"]["close"] for d in data["ohlcv"][-20:]]
+        if len(data["ohlcv"]) >= 21:
+            last_20_prices = [d["SPY"]["close"] for d in data["ohlcv"][-21:-1]]
             current_price = data["ohlcv"][-1]["SPY"]["close"]
             max_price = max(last_20_prices)
             min_price = min(last_20_prices)

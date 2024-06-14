@@ -23,11 +23,11 @@ class TradingStrategy(Strategy):
             min_price = min(last_20_prices)
             
             # Open long if current price is higher than the max of the last 20 minutes prices
-            if current_price > max_price and data['holdings']['SPY'] != 1:
+            if current_price > max_price and data['holdings'].get('SPY') != 1:
                 spy_stake = 1  # 100% allocation into SPY
                 # log("Opening long position in SPY")
             # Open short if current price is less than the min of the last 20 minutes prices
-            elif current_price < min_price and data['holdings']['SPY'] == 1:
+            elif current_price < min_price and data['holdings'].get('SPY') == 1:
                 spy_stake = 0  # Indicates a short position; handling of short positions depends on the platform's ability to execute them
                 # log("Close long position in SPY")
         else:

@@ -13,6 +13,7 @@ class TradingStrategy(Strategy):
         return "1min"
 
     def run(self, data):
+        log(data)
         # Initialize SPY stake to 0
         spy_stake = 0
         # Access the last 20 minutes data for SPY

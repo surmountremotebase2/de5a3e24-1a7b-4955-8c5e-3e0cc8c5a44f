@@ -29,7 +29,7 @@ class TradingStrategy(Strategy):
                 log("Opening long position in SPY")
             # Open short if current price is less than the min of the last 20 minutes prices
             elif current_price < min_price and data['holdings']['SPY'] != -1:
-                spy_stake = -1  # Indicates a short position; handling of short positions depends on the platform's ability to execute them
+                spy_stake = 0  # Indicates a short position; handling of short positions depends on the platform's ability to execute them
                 log("Opening short position in SPY")
         else:
             # If there's not enough data, do nothing

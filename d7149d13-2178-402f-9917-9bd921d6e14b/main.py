@@ -32,6 +32,5 @@ class TradingStrategy(Strategy):
                 # log("Close long position in SPY")
         else:
             # If there's not enough data, do nothing
-            # log("Not enough data available to make a decision")
-        
+            log("Not enough data available to make a decision")
         return TargetAllocation({"SPY": spy_stake})
